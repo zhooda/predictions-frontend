@@ -14,7 +14,9 @@ import { Col, Row, Button, Input, Form } from 'sveltestrap';
 		src = {
 			prediction: ''
 		}
-		fetch(`http://144.202.25.44:6969/api/v1/predict?text=${text}&verbose=true`)
+		fetch(`http://144.202.25.44:6969/api/v1/predict?text=${text}&verbose=true`,
+		{method: 'GET',
+		mode: 'cors'})
 			.then((response) => response.json())
 			.then(json => {
 				src = json
