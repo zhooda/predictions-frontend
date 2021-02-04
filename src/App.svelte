@@ -4,5 +4,6 @@
 </script>
 
 <Container class="pt-5">
+	<h1 class="m-5" align="center">predict-inator!</h1>
 	<Prediction/>
 </Container>

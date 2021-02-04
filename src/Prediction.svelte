@@ -50,8 +50,8 @@ import { Col, Row, Button, Input, Form } from 'sveltestrap';
 			<Button disabled={!submitable} color="danger" class="predict" on:click={getPrediction(text)}>predict</Button>
 		</Col>
 	</Row>
-	<Row class="pt-3">
-		<Col md='8' xs='12'>
+	<Row class="mt-5">
+		<Col md='12' xs='12'>
 			{#if src.prediction.length === 0}
 			<h1>loading...</h1>
 			{:else}
@@ -60,7 +60,7 @@ import { Col, Row, Button, Input, Form } from 'sveltestrap';
 		</Col>
 	</Row>
 	<Row>
-		<Col md='8' xs='12'>
+		<Col md='12' xs='12'>
 			{#if src.prediction.length === 0}
 			<h3>loading...</h3>
 			{:else}
