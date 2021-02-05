@@ -1,6 +1,8 @@
 <script>
 import App from "./App.svelte";
 import { Col, Row, Button, Input, Form } from 'sveltestrap';
+import { Diamonds } from "svelte-loading-spinners";
+// var sleep = require('sleep');
 
 	let src = {
 		verbose: 'type a message!',
@@ -14,11 +16,12 @@ import { Col, Row, Button, Input, Form } from 'sveltestrap';
 		src = {
 			prediction: ''
 		}
-		fetch(`https://cors-anywhere.herokuapp.com/http://144.202.25.44:6969/api/v1/predict?text=${text}&verbose=true`,
+		fetch(`http://144.202.25.44:6969/api/v1/predict?text=${text}&verbose=true`,
 		{method: 'GET',
 		mode: 'cors'})
 			.then((response) => response.json())
 			.then(json => {
+				// sleep.sleep(2)
 				src = json
 			})
 		.catch(err => {
@@ -53,7 +56,8 @@ import { Col, Row, Button, Input, Form } from 'sveltestrap';
 	<Row class="mt-5">
 		<Col md='12' xs='12'>
 			{#if src.prediction.length === 0}
-			<h1>loading...</h1>
+			<!-- <h1>loading...</h1> -->
+			<Diamonds size="60" color="#FF3E00" duration="1s"></Diamonds>
 			{:else}
 			<h1>{src.verbose}</h1>
 			{/if}
@@ -62,7 +66,7 @@ import { Col, Row, Button, Input, Form } from 'sveltestrap';
 	<Row>
 		<Col md='12' xs='12'>
 			{#if src.prediction.length === 0}
-			<h3>loading...</h3>
+			<!-- <h3>loading...</h3> -->
 			{:else}
 			<h3>{src.prediction}</h3>
 			{/if}

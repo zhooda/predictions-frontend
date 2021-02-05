@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "sirv-cli": "^1.0.0",
+    "sleep": "^6.3.0",
+    "svelte-loading-spinners": "^0.1.4",
     "sveltestrap": "^3.13.0"
   }
 }
