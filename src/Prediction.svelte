@@ -16,7 +16,7 @@ import { Diamonds } from "svelte-loading-spinners";
 		src = {
 			prediction: ''
 		}
-		fetch(`http://144.202.25.44:6969/api/v1/predict?text=${text}&verbose=true`,
+		fetch(`http://box.zeeshan.wtf:6969/api/v1/predict?text=${text}&verbose=true`,
 		{method: 'GET',
 		mode: 'cors'})
 			.then((response) => response.json())
@@ -57,7 +57,9 @@ import { Diamonds } from "svelte-loading-spinners";
 		<Col md='12' xs='12'>
 			{#if src.prediction.length === 0}
 			<!-- <h1>loading...</h1> -->
-			<Diamonds size="60" color="#FF3E00" duration="1s"></Diamonds>
+			<h1 align="center">
+				<Diamonds size="60" color="#FF3E00" duration="1s"></Diamonds>
+			</h1>
 			{:else}
 			<h1>{src.verbose}</h1>
 			{/if}
