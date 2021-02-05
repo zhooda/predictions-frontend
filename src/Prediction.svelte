@@ -16,9 +16,11 @@ import { Diamonds } from "svelte-loading-spinners";
 		src = {
 			prediction: ''
 		}
-		fetch(`http://box.zeeshan.wtf:6969/api/v1/predict?text=${text}&verbose=true`,
-		{method: 'GET',
-		mode: 'cors'})
+		fetch(
+			`http://box.zeeshan.wtf:8080/http://box.zeeshan.wtf:6969/api/v1/predict?text=${text}&verbose=true`, {
+				headers: { 'origin': 'predict-inator.zeeshan.wtf',
+						   'x-requested-with': 'js' }
+			})
 			.then((response) => response.json())
 			.then(json => {
 				// sleep.sleep(2)
